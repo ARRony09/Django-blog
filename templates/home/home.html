@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+
+{% block title %} Home {% endblock title %}
+{%block homeactive%}active{% endblock homeactive %}
+{% block body %}
+<div class="container">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            {% load static %}
+            <img class="d-block w-100" src="home/static/home/media/1875.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="..." alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="..." alt="Third slide">
+          </div>
+        </div>
+      </div>
+    <div class="jumbotron my-3">
+        <h2 class="text-center">Welcome to saveNature!</h2>
+        <p class="h5" style="margin: 12px;">The most obvious reason for conservation is to protect wildlife and promote
+            biodiversity. Protecting wildlife and preserving it for future generations also means that the animals we
+            love don't become a distant memory. And we can maintain a healthy and functional ecosystem.</p>
+        <div class="col text-center my-3">
+            <a class="btn btn-primary btn-lg" href="/blog" role="button" style="padding: 6px;margin-top: 9px">Go to Blog</a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-4">
+    
+    <h2 class="text-info">Popular Blogposts</h2>
+    <div
+        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">{{post.author}}</strong>
+            <h3 class="mb-0">{{post.title}}</h3>
+            <div class="mb-1 text-muted">{{post.timeStamp}}</div>
+            <p class="card-text mb-auto">{{post.content| truncatechars:300}}</p>
+            <a href="/blog/{{post.slug}}" class="stretched-primary">Continue reading</a>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
