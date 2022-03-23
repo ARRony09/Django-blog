@@ -1,4 +1,14 @@
 {%extends 'base.html'%}
-{% block title %} about {% endblock title %}
+{% block title %} About {% endblock title %}
 {%block aboutactive%}active{% endblock aboutactive%}
-{% block body %} This is about {% endblock %}
+{% block body %} 
+
+{% for author in allauthors %}
+<div class="container">
+
+    <li><strong class="d-inline-block mb-2 text-primary">{{author.name}}</strong></li>
+    <p class="card-text mb-auto">{{author.desc| truncatechars:300}}</p>
+</div>
+{%endfor%}
+
+{% endblock %}

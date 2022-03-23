@@ -14,3 +14,6 @@ class Contact(models.Model):
             return "Message from " + self.name + ' - ' + self.email
         
 
+class Author(models.Model):
+    name=models.CharField(max_length=100)
+    desc=models.TextField()

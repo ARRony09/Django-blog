@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render,HttpResponse
-from home.models import Contact
+from home.models import Contact,Author
 from django.contrib import messages
 from blog.models import Post
 from django.contrib.auth.models import User
@@ -28,8 +28,9 @@ def contact(request):
     return render(request,'home/contact.html')
 
 def about(request):
-    messages.info(request,"This is about proCoder")
-    return render(request,'home/about.html')
+    allauthors=Author.objects.all()
+    params={'allauthors':allauthors}
+    return render(request,'home/about.html',params)
 
 def search(request):
     query=request.GET['query']
