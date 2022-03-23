@@ -27,7 +27,7 @@ SECRET_KEY = 'g99r*@x+j@sa4!u!9=f-#g_f+8dk_)z+73l01!#@^97svn!qy*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','save-nature-blog.herokuapp.com']
 
 
 # Application definition
